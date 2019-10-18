@@ -31,7 +31,7 @@ contactsRoutes.route("/add").post(function (req, res) {
 contactsRoutes.route("/adds").post(function (req, res) {
   const lotOfContacts = req.body;
   console.log(lotOfContacts)
-  Promise.all(lotOfContacts.map( (contacts) => {
+  Promise.all(lotOfContacts.map((contacts) => {
     let contact = new Contacts(contacts);
     return contact
       .save().then(() => {
@@ -59,7 +59,7 @@ contactsRoutes.route("/:query").get(function (req, res) {
         res.status(200).send([contactss]);
       }
     });
-    return ;
+    return;
   }
 
   let searchArray = []
@@ -83,7 +83,7 @@ contactsRoutes.route("/:query").get(function (req, res) {
 
 // Defined get data(index or listing) route
 contactsRoutes.route("/").get(function (req, res) {
-  Contacts.find(function (err, contactss) {
+  Contacts.find({}, function (err, contactss) {
     if (err) {
       console.log(err);
     } else {
