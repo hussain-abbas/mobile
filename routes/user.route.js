@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const userRoutes = express.Router();
 
-let User = require("../models/User");
+let User = require("../models/user");
 
 // user register
 userRoutes.route("/add").post(function(req, res) {
