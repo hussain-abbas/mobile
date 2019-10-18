@@ -6,7 +6,7 @@ const contactsRoutes = express.Router();
 const connection = require("../realtime");
 
 // Require Contacts model in our routes module
-let Contacts = require("../models/Contacts");
+let Contacts = require("../models/contacts");
 
 // Defined store route
 contactsRoutes.route("/add").post(function (req, res) {
